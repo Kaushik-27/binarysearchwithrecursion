@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(binarysearch VERSION 0.1.0)
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../lib)
+
+file(GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
+
+# add_library(${SOURCE_FILES} SHARED ${SOURCE_FILES})
+
+# target_link_libraries( ${PROJECT_NAME})
+
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+
+set(CMAKE_INSTALL_PREFIX install)
+install( TARGETS ${PROJECT_NAME} DESTINATION bin )
